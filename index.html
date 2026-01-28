@@ -1,61 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Saurabh Kumar Jha | Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saurabh Kumar Jha | Portfolio</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<canvas id="bg"></canvas>
+<canvas id="particle-canvas"></canvas>
+<div class="cursor"></div>
 
-<header id="home">
-  <h1 class="glow">Saurabh Kumar Jha</h1>
-  <p id="typing"></p>
+<!-- Floating Buttons -->
+<button id="soundToggle">🔇 Sound OFF</button>
+<button class="langToggle" id="langBtn">EN</button>
+<a class="whatsapp" target="_blank">💬</a>
+<button id="backToTop">⬆</button>
 
-  <div class="nav-btns">
-    <button data-target="about">About</button>
-    <button data-target="projects">Projects</button>
-    <button data-target="contact">Contact</button>
-  </div>
+<header>
+<h1>Saurabh Kumar Jha</h1>
+<p class="tagline" id="typing"></p>
+<div class="header-buttons">
+<button class="btn" data-target="projects">View Projects</button>
+<button class="btn" data-target="contact">Contact Me</button>
+<a class="btn" href="resume.pdf" download>Download Resume</a>
+</div>
 </header>
 
 <section id="about">
-  <h2>About Me</h2>
-  <p>
-    I am a passionate BCA student specializing in Data Science & AI.  
-    I love building modern, interactive web experiences and AI-powered tools.  
-    Founder & Tech Contributor at <b>VFG Foundation</b>.
-  </p>
+<h2>About Me</h2>
+<p>I’m <strong>Saurabh Kumar Jha</strong>, a passionate AI and Web Developer who loves turning ideas into interactive digital experiences. I specialize in building modern websites, AI tools, and dynamic applications with smooth UX, sleek UI, and cutting-edge technologies. I thrive on solving real-world problems through code and innovation.</p>
+</section>
 
-  <a href="https://www.linkedin.com/in/saurabh-kumar-jha-093912307" target="_blank">
-    LinkedIn Profile →
-  </a>
+<section id="skills">
+<h2>Skills</h2>
+<div class="skills">
+<span>HTML</span><span>CSS</span><span>JavaScript</span>
+<span>React</span><span>AI & Data Science</span><span>Python</span>
+</div>
 </section>
 
 <section id="projects">
-  <h2>Projects</h2>
-
-  <div class="card" onclick="window.open('https://vfgfoundation.com')">
-    <h3>VFG Foundation</h3>
-    <p>NGO website for social impact & awareness.</p>
-  </div>
+<h2>Projects</h2>
+<div class="projects">
+<div class="project-card" onclick="window.open('https://vfgfoundation.com','_blank')">NGO Website Platform</div>
+<div class="project-card">AI Voice Assistant</div>
+<div class="project-card">Automation Tools</div>
+</div>
 </section>
 
 <section id="contact">
-  <h2>Contact</h2>
-  <p>Email: saurabh@example.com</p>
+<h2>Contact Me</h2>
+<form id="contactForm" class="contact-form">
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea placeholder="Your Message" required></textarea>
+<button class="btn" type="submit">Send Message</button>
+</form>
+<p id="formStatus"></p>
 </section>
 
-<!-- CHATBOT -->
-<div id="chatbot">
-  <div class="chat-header">Saurabh's Assistant 🤖</div>
-  <div id="messages"></div>
-  <input id="userInput" placeholder="Ask something..." />
-</div>
+<footer>
+<p>© 2026 Saurabh Kumar Jha Portfolio</p>
+<p>
+<a href="mailto:saurabhkashyap@example.com">Email</a> •
+<a href="https://github.com/saurabhkashyap-maker" target="_blank">GitHub</a> •
+<a href="https://www.linkedin.com/in/saurabh-kumar-jha-093912307/" target="_blank">LinkedIn</a>
+</p>
+</footer>
 
-<button id="chatToggle">💬</button>
+<!-- AI Chatbot -->
+<div class="chatbot" id="chatbot">
+<div class="chatbot-header">🤖 AI Assistant</div>
+<div class="chatbot-messages" id="botMessages"></div>
+<div class="chatbot-input">
+<input type="text" id="botInput" placeholder="Ask something...">
+<button id="botSend">Send</button>
+</div>
+</div>
 
 <script src="script.js"></script>
 </body>
