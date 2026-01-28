@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="bg"></div>
+<canvas id="particle-canvas"></canvas>
 <div class="cursor"></div>
 
 <button id="soundToggle">🔇 Sound OFF</button>
@@ -17,7 +17,7 @@
 <header>
 <h1>Saurabh Kumar Jha</h1>
 <p class="tagline" id="typing"></p>
-<div style="margin-top:25px">
+<div class="header-buttons">
 <button class="btn">View Projects</button>
 <a class="btn" href="resume.pdf" download>Download Resume</a>
 <button class="btn">Contact Me</button>
@@ -39,8 +39,8 @@
 <section>
 <h2>Projects</h2>
 <div class="projects">
+<div class="project-card" onclick="window.open('https://vfgfoundation.com','_blank')">NGO Website Platform</div>
 <div class="project-card">AI Voice Assistant</div>
-<div class="project-card">NGO Website Platform</div>
 <div class="project-card">Automation Tools</div>
 </div>
 </section>
