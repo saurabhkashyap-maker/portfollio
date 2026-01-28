@@ -7,36 +7,40 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <canvas id="particle-canvas"></canvas>
 <div class="cursor"></div>
 
+<!-- Floating Buttons -->
 <button id="soundToggle">🔇 Sound OFF</button>
 <button class="langToggle" id="langBtn">EN</button>
-<a class="whatsapp" href="https://wa.me/917050624940" target="_blank">💬</a>
+<a class="whatsapp" target="_blank">💬</a>
+<button id="backToTop">⬆</button>
 
 <header>
 <h1>Saurabh Kumar Jha</h1>
 <p class="tagline" id="typing"></p>
 <div class="header-buttons">
-<button class="btn">View Projects</button>
+<button class="btn" data-target="projects">View Projects</button>
+<button class="btn" data-target="contact">Contact Me</button>
 <a class="btn" href="resume.pdf" download>Download Resume</a>
-<button class="btn">Contact Me</button>
 </div>
 </header>
 
-<section>
+<section id="about">
 <h2>About Me</h2>
-<p>I am a passionate developer focused on building futuristic web and AI-based solutions with clean UI and smooth UX.</p>
+<p>I’m <strong>Saurabh Kumar Jha</strong>, a passionate AI and Web Developer who loves turning ideas into interactive digital experiences. I specialize in building modern websites, AI tools, and dynamic applications with smooth UX, sleek UI, and cutting-edge technologies. I thrive on solving real-world problems through code and innovation.</p>
 </section>
 
-<section>
+<section id="skills">
 <h2>Skills</h2>
 <div class="skills">
-<span>HTML</span><span>CSS</span><span>JavaScript</span><span>AI</span><span>Data Science</span><span>React</span>
+<span>HTML</span><span>CSS</span><span>JavaScript</span>
+<span>React</span><span>AI & Data Science</span><span>Python</span>
 </div>
 </section>
 
-<section>
+<section id="projects">
 <h2>Projects</h2>
 <div class="projects">
 <div class="project-card" onclick="window.open('https://vfgfoundation.com','_blank')">NGO Website Platform</div>
@@ -59,12 +63,13 @@
 <footer>
 <p>© 2026 Saurabh Kumar Jha Portfolio</p>
 <p>
-<a href="mailto:saurabh@example.com">Email</a> •
-<a href="https://github.com/" target="_blank">GitHub</a> •
-<a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+<a href="mailto:saurabhkashyap@example.com">Email</a> •
+<a href="https://github.com/saurabhkashyap-maker" target="_blank">GitHub</a> •
+<a href="https://www.linkedin.com/in/saurabh-kumar-jha-093912307/" target="_blank">LinkedIn</a>
 </p>
 </footer>
 
+<!-- AI Chatbot -->
 <div class="chatbot" id="chatbot">
 <div class="chatbot-header">🤖 AI Assistant</div>
 <div class="chatbot-messages" id="botMessages"></div>
