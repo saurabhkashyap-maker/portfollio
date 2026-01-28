@@ -1,11 +1,46 @@
-.card {
-  border: 1px solid #00f6ff;
-  border-radius: 12px;
-  padding: 20px;
-  transition: 0.3s;
-}
+/* style.css */
+/* Basic Reset */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',sans-serif;background:#020617;color:#e5e7eb;overflow-x:hidden;}
 
-.card:hover {
-  box-shadow: 0 0 20px #00f6ff;
-  transform: scale(1.03);
-}
+/* Animated Background */
+.bg{position:fixed;inset:0;background:radial-gradient(circle at 20% 20%,#1e3a8a,transparent 40%), radial-gradient(circle at 80% 80%,#0ea5e9,transparent 40%);animation:move 12s infinite alternate;z-index:-1;}
+@keyframes move{from{filter:hue-rotate(0deg);}to{filter:hue-rotate(40deg);}}
+
+/* Header */
+header{text-align:center;padding:120px 20px;}
+h1{font-size:4rem;color:#38bdf8;}
+p.tagline{font-size:1.2rem;margin-top:10px;color:#c7d2fe;}
+.btn{margin:20px 10px;padding:14px 36px;border:none;border-radius:999px;background:#0ea5e9;color:#fff;font-size:16px;cursor:pointer;transition:.3s;}
+.btn:hover{transform:scale(1.05);background:#22d3ee;}
+
+/* Sections */
+section{max-width:1000px;margin:60px auto;padding:40px;background:rgba(15,23,42,0.7);border-radius:24px;backdrop-filter:blur(10px);opacity:0;transform:translateY(60px);transition:1s;}
+section.visible{opacity:1;transform:translateY(0);}
+section h2{color:#38bdf8;margin-bottom:15px;}
+.skills span{display:inline-block;margin:6px;padding:8px 14px;background:#020617;border:1px solid #38bdf8;border-radius:20px;font-size:14px;}
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+.project-card{padding:30px;background:#020617;border:1px solid #38bdf8;border-radius:18px;transition:.3s;}
+.project-card:hover{transform:translateY(-8px) scale(1.03);box-shadow:0 0 20px #38bdf8;}
+
+/* Footer */
+footer{text-align:center;padding:40px;color:#94a3b8;}
+
+/* Floating Buttons */
+#soundToggle{position:fixed;top:20px;right:20px;background:#22c55e;color:#022c22;border:none;padding:10px 18px;border-radius:12px;cursor:pointer;z-index:10;}
+.langToggle{position:fixed;left:20px;top:20px;background:#38bdf8;color:#020617;border:none;padding:10px 16px;border-radius:12px;cursor:pointer;z-index:10;}
+.whatsapp{position:fixed;bottom:20px;right:20px;background:#22c55e;color:#022c22;padding:14px 18px;border-radius:50%;font-size:22px;text-decoration:none;z-index:10;}
+.cursor{position:fixed;width:20px;height:20px;border-radius:50%;pointer-events:none;background:rgba(56,189,248,0.6);box-shadow:0 0 20px rgba(56,189,248,0.8);transform:translate(-50%,-50%);z-index:999;}
+
+/* Contact Form */
+.contact-form{display:flex;flex-direction:column;gap:15px;}
+.contact-form input,.contact-form textarea{padding:14px;border-radius:12px;border:none;background:#020617;color:#e5e7eb;}
+.contact-form button{padding:14px;border-radius:12px;border:none;background:#0ea5e9;color:#fff;cursor:pointer;}
+
+/* Chatbot */
+.chatbot{position:fixed;bottom:90px;right:20px;width:300px;background:#020617;border:1px solid #38bdf8;border-radius:18px;display:none;flex-direction:column;z-index:20;}
+.chatbot-header{padding:12px;background:#38bdf8;color:#020617;border-radius:18px 18px 0 0;font-weight:600;}
+.chatbot-messages{padding:10px;height:220px;overflow-y:auto;font-size:14px;}
+.chatbot-input{display:flex;}
+.chatbot-input input{flex:1;padding:10px;border:none;background:#020617;color:#fff;}
+.chatbot-input button{border:none;background:#0ea5e9;color:#fff;padding:10px 14px;cursor:pointer;}
