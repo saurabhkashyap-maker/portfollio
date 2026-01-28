@@ -1,87 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Saurabhh Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body{
-      margin:0;
-      font-family:Arial, sans-serif;
-      background:#020617;
-      color:#e5e7eb;
-      text-align:center;
-    }
-    header{
-      padding:100px 20px;
-    }
-    h1{
-      font-size:3.5rem;
-      color:#38bdf8;
-    }
-    .btn{
-      padding:14px 30px;
-      margin:10px;
-      border:none;
-      border-radius:30px;
-      background:#0ea5e9;
-      color:white;
-      font-size:16px;
-      cursor:pointer;
-    }
-    section{
-      max-width:900px;
-      margin:40px auto;
-      padding:30px;
-      background:#020617;
-      border:1px solid #38bdf8;
-      border-radius:20px;
-    }
-    footer{
-      padding:30px;
-      color:#94a3b8;
-    }
-    .whatsapp{
-      position:fixed;
-      bottom:20px;
-      right:20px;
-      background:#22c55e;
-      color:#022c22;
-      padding:14px 18px;
-      border-radius:50%;
-      text-decoration:none;
-      font-size:22px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saurabh Kumar Jha | Portfolio</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="bg"></div>
+<div class="cursor"></div>
+
+<button id="soundToggle">🔇 Sound OFF</button>
+<button class="langToggle" id="langBtn">EN</button>
+<a class="whatsapp" href="https://wa.me/917050624940" target="_blank">💬</a>
 
 <header>
-  <h1>Saurabhh</h1>
-  <p>AI • Web Developer • Tech Enthusiast</p>
-  <a class="btn" href="resume.pdf" download>Download Resume</a>
+<h1>Saurabh Kumar Jha</h1>
+<p class="tagline" id="typing"></p>
+<div style="margin-top:25px">
+<button class="btn">View Projects</button>
+<a class="btn" href="resume.pdf" download>Download Resume</a>
+<button class="btn">Contact Me</button>
+</div>
 </header>
 
 <section>
-  <h2>About Me</h2>
-  <p>I am a passionate developer building modern websites and AI based solutions.</p>
+<h2>About Me</h2>
+<p>I am a passionate developer focused on building futuristic web and AI-based solutions with clean UI and smooth UX.</p>
 </section>
 
 <section>
-  <h2>Skills</h2>
-  <p>HTML • CSS • JavaScript • AI • Data Science</p>
+<h2>Skills</h2>
+<div class="skills">
+<span>HTML</span><span>CSS</span><span>JavaScript</span><span>AI</span><span>Data Science</span><span>React</span>
+</div>
 </section>
 
 <section>
-  <h2>Projects</h2>
-  <p>AI Assistant • NGO Website • Portfolio Website</p>
+<h2>Projects</h2>
+<div class="projects">
+<div class="project-card">AI Voice Assistant</div>
+<div class="project-card">NGO Website Platform</div>
+<div class="project-card">Automation Tools</div>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact Me</h2>
+<form id="contactForm" class="contact-form">
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea placeholder="Your Message" required></textarea>
+<button class="btn" type="submit">Send Message</button>
+</form>
+<p id="formStatus"></p>
 </section>
 
 <footer>
-  © 2026 Saurabhh Portfolio
+<p>© 2026 Saurabh Kumar Jha Portfolio</p>
+<p>
+<a href="mailto:saurabh@example.com">Email</a> •
+<a href="https://github.com/" target="_blank">GitHub</a> •
+<a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+</p>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/917050624940" target="_blank">💬</a>
+<div class="chatbot" id="chatbot">
+<div class="chatbot-header">🤖 AI Assistant</div>
+<div class="chatbot-messages" id="botMessages"></div>
+<div class="chatbot-input">
+<input type="text" id="botInput" placeholder="Ask something...">
+<button id="botSend">Send</button>
+</div>
+</div>
 
+<script src="script.js"></script>
 </body>
 </html>
