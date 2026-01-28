@@ -1,5 +1,3 @@
-// script.js - Upgraded Portfolio JS
-
 /* ---------------- Cursor Animation ---------------- */
 const cursor = document.querySelector('.cursor');
 window.addEventListener('mousemove', e => {
@@ -69,7 +67,7 @@ toggle.addEventListener('click', () => {
     if (soundOn) startSound.play();
 });
 
-// Play start sound on load
+// Play start sound on page load
 window.addEventListener('load', () => { if (soundOn) startSound.play(); });
 
 // Hover & click sounds
@@ -94,7 +92,7 @@ const botMessages = document.getElementById('botMessages');
 const botInput = document.getElementById('botInput');
 const botSend = document.getElementById('botSend');
 
-const OPENAI_API_KEY = "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"; // <-- My OpenAI API key
+const OPENAI_API_KEY = "628a239e-5d0e-4688-866b-c4e4d0252ab1"; // <-- My API key
 
 botSend.addEventListener('click', async () => {
     const msg = botInput.value.trim();
@@ -128,10 +126,11 @@ botSend.addEventListener('click', async () => {
 
     } catch (err) {
         console.error(err);
-        // Fallback predefined responses
+        // Fallback predefined replies
         let fallback = '';
         const lower = msg.toLowerCase();
         if (lower.includes('hi') || lower.includes('hello')) fallback = "Hello! I am Saurabh's Assistant 🤖. How can I help you today?";
+        if (lower.includes(contact number) || lower.includes(Contact Number)) fallback = "sure here is saurabh kumar contact number 7050624940";
         else if (lower.includes('ngo')) fallback = "You can visit our NGO website at https://vfgfoundation.com";
         else if (lower.includes('linkedin')) fallback = "Here’s my LinkedIn profile: https://www.linkedin.com/in/saurabh-kumar-jha-093912307/";
         else fallback = "Thanks for contacting Saurabh's Assistant. I will reply soon.";
