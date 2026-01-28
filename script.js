@@ -67,7 +67,7 @@ botInput.value='';
 try{
 const response=await fetch('https://api.openai.com/v1/chat/completions',{
 method:'POST',
-headers:{'Content-Type':'application/json','Authorization':'Bearer YOUR_OPENAI_API_KEY'},
+headers:{'Content-Type':'application/json','Authorization':'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'},
 body:JSON.stringify({model:"gpt-3.5-turbo",messages:[{role:"user",content:msg}],max_tokens:150})
 });
 const data=await response.json();
