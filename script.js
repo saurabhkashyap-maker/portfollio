@@ -1,17 +1,17 @@
-/* INIT SCREEN */
-const btn=document.getElementById("initBtn");
-const init=document.getElementById("initScreen");
-const main=document.getElementById("mainContent");
-const bootSound=document.getElementById("bootSound");
-btn.onclick=()=>{
-  bootSound.play();
-  setTimeout(()=>{
-    init.style.display="none";
-    main.style.display="block";
+/* INIT SCREEN FIXED */
+const btn = document.getElementById("initBtn");
+const init = document.getElementById("initScreen");
+const main = document.getElementById("mainContent");
+const bootSound = document.getElementById("bootSound");
+
+btn.addEventListener("click", () => {
+    bootSound.currentTime = 0;
+    bootSound.play().catch(()=>{}); // safe autoplay
+    init.style.display = "none";
+    main.style.display = "block";
     startTyping();
     animateHomeServices();
-  },1200);
-};
+});
 
 /* TYPING EFFECT */
 const texts=["Elite Digital Solutions","AI Powered Systems","Modern Web Experiences","Future Ready Technology"];
@@ -27,6 +27,15 @@ function startTyping(){
       if(j===0){del=false;i=(i+1)%texts.length;}
     }
   },90);
+}
+
+/* HOME SERVICES SLIDE-IN */
+function animateHomeServices(){
+  const cards = document.querySelectorAll(".home-services .service-card");
+  cards.forEach((card,index)=>{
+    card.style.animation = `slideIn 0.8s forwards`;
+    card.style.animationDelay = `${0.2*(index+1)}s`;
+  });
 }
 
 /* NAVIGATION BUTTONS */
@@ -59,4 +68,51 @@ chatInput.addEventListener("keypress",e=>{
     chatContent.innerHTML+=`<div>User: ${userMsg}</div>`;
     chatInput.value="";
     setTimeout(()=>{
-      let reply="Sorry
+      let reply="Sorry, I can't answer that right now.";
+      chatContent.innerHTML+=`<div>Assistant: ${reply}</div>`;
+      chatContent.scrollTop=chatContent.scrollHeight;
+    },500);
+  }
+});
+
+/* HOVER SOUND FOR SERVICE CARDS */
+const serviceCards=document.querySelectorAll(".service-card");
+serviceCards.forEach(card=>{
+  card.addEventListener("mouseenter",()=>document.getElementById("cardHoverSound").play());
+});
+
+/* PARTICLES BACKGROUND */
+const canvas=document.getElementById("bgCanvas");
+const ctx=canvas.getContext("2d");
+let particles=[];
+function initParticles(){
+  canvas.width=window.innerWidth;
+  canvas.height=window.innerHeight;
+  particles=[];
+  for(let i=0;i<80;i++){
+    particles.push({
+      x:Math.random()*canvas.width,
+      y:Math.random()*canvas.height,
+      r:Math.random()*2+1,
+      dx:(Math.random()-0.5)*1,
+      dy:(Math.random()-0.5)*1
+    });
+  }
+}
+function drawParticles(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  particles.forEach(p=>{
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle="rgba(155,92,255,0.7)";
+    ctx.fill();
+    p.x+=p.dx;
+    p.y+=p.dy;
+    if(p.x>canvas.width||p.x<0) p.dx*=-1;
+    if(p.y>canvas.height||p.y<0) p.dy*=-1;
+  });
+  requestAnimationFrame(drawParticles);
+}
+window.addEventListener("resize",initParticles);
+initParticles();
+drawParticles();
