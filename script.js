@@ -15,15 +15,23 @@ function startTyping(){
 }
 startTyping();
 
-/* NAVIGATION SMOOTH SCROLL */
+/* HOME SERVICES ANIMATION */
+function animateHomeServices(){
+  const cards=document.querySelectorAll(".home-services .service-card");
+  cards.forEach((card,index)=>{
+    card.style.animation=`slideIn 0.8s forwards`;
+    card.style.animationDelay=`${0.2*(index+1)}s`;
+  });
+}
+animateHomeServices();
+
+/* NAVIGATION */
 document.querySelectorAll("nav a").forEach(link=>{
-  link.addEventListener("click", e=>{
+  link.addEventListener("click",e=>{
     e.preventDefault();
-    const sectionId = link.dataset.section;
-    const sectionEl = document.getElementById(sectionId);
-    if(sectionEl){
-      sectionEl.scrollIntoView({behavior: "smooth"});
-    }
+    const section=link.dataset.section;
+    document.querySelectorAll(".section").forEach(sec=>sec.style.display="none");
+    document.getElementById(section).style.display="block";
   });
 });
 
@@ -76,16 +84,5 @@ function drawParticles(){
   requestAnimationFrame(drawParticles);
 }
 window.addEventListener("resize",initParticles);
-document.addEventListener("mousemove", e=>{
-  particles.forEach(p=>{
-    const dx = e.clientX - p.x;
-    const dy = e.clientY - p.y;
-    const dist = Math.sqrt(dx*dx + dy*dy);
-    if(dist<100){
-      p.x -= dx/80;
-      p.y -= dy/80;
-    }
-  });
-});
 initParticles();
 drawParticles();
