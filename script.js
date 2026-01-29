@@ -15,18 +15,19 @@ function startTyping(){
 }
 startTyping();
 
-/* HOME SERVICES ANIMATION */
+/* HOME SERVICES SLIDE-IN */
 function animateHomeServices(){
-  const cards=document.querySelectorAll(".home-services .service-card");
+  const cards = document.querySelectorAll(".home-services .service-card");
   cards.forEach((card,index)=>{
-    card.style.animation=`slideIn 0.8s forwards`;
-    card.style.animationDelay=`${0.2*(index+1)}s`;
+    card.style.animation = `slideIn 0.8s forwards`;
+    card.style.animationDelay = `${0.2*(index+1)}s`;
   });
 }
 animateHomeServices();
 
-/* NAVIGATION */
-document.querySelectorAll("nav a").forEach(link=>{
+/* NAVIGATION BUTTONS */
+const navLinks=document.querySelectorAll("nav a");
+navLinks.forEach(link=>{
   link.addEventListener("click",e=>{
     e.preventDefault();
     const section=link.dataset.section;
@@ -35,7 +36,7 @@ document.querySelectorAll("nav a").forEach(link=>{
   });
 });
 
-/* OFFLINE CHATBOX */
+/* CHATBOX OFFLINE AI */
 const chatBtn=document.getElementById("chatBtn");
 const chatBox=document.getElementById("chatBox");
 const chatContent=document.getElementById("chatContent");
@@ -52,7 +53,8 @@ chatInput.addEventListener("keypress",e=>{
     chatContent.innerHTML+=`<div>User: ${userMsg}</div>`;
     chatInput.value="";
     setTimeout(()=>{
-      chatContent.innerHTML+=`<div>Assistant: Sorry, I can't answer that right now.</div>`;
+      let reply="Sorry, I can't answer that right now.";
+      chatContent.innerHTML+=`<div>Assistant: ${reply}</div>`;
       chatContent.scrollTop=chatContent.scrollHeight;
     },500);
   }
@@ -67,7 +69,13 @@ function initParticles(){
   canvas.height=window.innerHeight;
   particles=[];
   for(let i=0;i<80;i++){
-    particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*2+1,dx:(Math.random()-0.5)*1,dy:(Math.random()-0.5)*1});
+    particles.push({
+      x:Math.random()*canvas.width,
+      y:Math.random()*canvas.height,
+      r:Math.random()*2+1,
+      dx:(Math.random()-0.5)*1,
+      dy:(Math.random()-0.5)*1
+    });
   }
 }
 function drawParticles(){
@@ -77,7 +85,8 @@ function drawParticles(){
     ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
     ctx.fillStyle="rgba(155,92,255,0.7)";
     ctx.fill();
-    p.x+=p.dx; p.y+=p.dy;
+    p.x+=p.dx;
+    p.y+=p.dy;
     if(p.x>canvas.width||p.x<0) p.dx*=-1;
     if(p.y>canvas.height||p.y<0) p.dy*=-1;
   });
