@@ -1,4 +1,4 @@
-/* GLOBAL STYLES */
+/* RESET */
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
 body{background:#000;color:#fff;overflow-x:hidden;position:relative;min-height:100vh;}
 #bgCanvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;}
@@ -19,8 +19,8 @@ h1{font-size:36px;letter-spacing:2px;}
 h1 span{color:#9b5cff;text-shadow:0 0 8px #9b5cff,0 0 15px #9b5cff;}
 #typing{margin-top:15px;font-size:16px;color:#0ff;min-height:22px;text-shadow:0 0 6px #0ff,0 0 12px #0ff;}
 
-/* ELITE SERVICES */
-.service-title{font-size:34px;margin-bottom:50px;text-shadow:0 0 8px #9b5cff,0 0 20px #9b5cff;}
+/* ELITE SERVICES CARDS */
+.service-title{font-size:34px;margin:40px 0 30px 0;text-shadow:0 0 8px #9b5cff,0 0 20px #9b5cff;}
 .service-title span{color:#9b5cff;}
 .services-container{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;perspective:1200px;}
 .service-card{background:linear-gradient(145deg,#0f0f0f,#1b1b1b);border-radius:18px;padding:25px;width:250px;max-width:90%;box-shadow:0 20px 40px rgba(0,0,0,.6);transform-style:preserve-3d;transition:.3s ease,box-shadow .3s ease,transform .3s ease;cursor:pointer;position:relative;}
@@ -33,13 +33,33 @@ h1 span{color:#9b5cff;text-shadow:0 0 8px #9b5cff,0 0 15px #9b5cff;}
 .pink{background:rgba(255,0,255,.2); color:#ff0;}
 .orange{background:rgba(255,165,0,.2); color:orange;}
 
+/* SLIDE-IN ANIMATION FOR HOME SERVICES */
+@keyframes slideIn{
+  0%{transform:translateY(50px) rotateY(0deg);opacity:0;}
+  100%{transform:translateY(0) rotateY(0deg);opacity:1;}
+}
+.home-services .service-card{opacity:0;animation:slideIn 0.8s forwards;}
+.home-services .service-card:nth-child(1){animation-delay:0.2s;}
+.home-services .service-card:nth-child(2){animation-delay:0.4s;}
+.home-services .service-card:nth-child(3){animation-delay:0.6s;}
+.home-services .service-card:nth-child(4){animation-delay:0.8s;}
+.home-services .service-card:nth-child(5){animation-delay:1s;}
+.home-services .service-card:nth-child(6){animation-delay:1.2s;}
+.home-services .service-card:nth-child(7){animation-delay:1.4s;}
+.home-services .service-card:nth-child(8){animation-delay:1.6s;}
+
 /* SKILLS */
 #skills ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:20px;}
 #skills li{padding:12px 20px;background:rgba(155,92,255,0.1);border-radius:12px;color:#9b5cff;box-shadow:0 0 10px rgba(155,92,255,0.3);transition:.3s;}
 #skills li:hover{transform:scale(1.1);background:rgba(155,92,255,0.3);}
 
 /* WORK */
-#work p{font-size:16px;color:#bbb;max-width:700px;margin:0 auto;line-height:1.6;}
+.work-card{background:linear-gradient(145deg,#0f0f0f,#1b1b1b);padding:20px;border-radius:15px;box-shadow:0 10px 30px rgba(155,92,255,0.5);max-width:600px;margin:20px auto;transition:.3s;}
+.work-card:hover{transform:translateY(-5px);box-shadow:0 20px 40px rgba(155,92,255,0.7);}
+.work-card h3{color:#9b5cff;margin-bottom:10px;text-shadow:0 0 8px #9b5cff;}
+.work-card p{color:#bbb;font-size:14px;line-height:1.5;margin-bottom:12px;}
+.work-link{color:#0ff;text-decoration:none;border:1px solid #0ff;padding:6px 12px;border-radius:8px;transition:.3s;}
+.work-link:hover{background:#0ff;color:#000;box-shadow:0 0 15px #0ff;}
 
 /* CHATBOX */
 #chatBtn{position:fixed;bottom:20px;right:20px;background:#9b5cff;color:#000;padding:15px;border-radius:50%;cursor:pointer;box-shadow:0 0 25px #9b5cff;font-size:20px;z-index:999;transition:.2s;}
