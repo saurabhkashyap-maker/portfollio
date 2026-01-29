@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Saurabh's Assistant</title>
+  <title>Saurabh Kumar Jha | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -10,46 +10,90 @@
 
 <!-- INTRO SCREEN -->
 <div id="intro">
-  <button id="startBtn">
-    ⏻ INITIALIZE SYSTEM
-  </button>
-  <p class="subtext">ESTABLISHED SECURE CONNECTION</p>
+  <button id="startBtn">⚡ INITIALIZE SYSTEM</button>
 </div>
 
-<!-- MAIN WEBSITE -->
-<div id="mainSite">
-  <nav>
-    <h1>Saurabh Kashyap</h1>
-  </nav>
+<!-- PARTICLE BACKGROUND -->
+<canvas id="particles"></canvas>
 
-  <section id="home">
-    <h2>Welcome</h2>
-    <p>AI • Developer • Innovator</p>
-  </section>
+<!-- TOP NAV -->
+<nav class="top-nav">
+  <div class="logo">SJ</div>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I am a passionate BCA student specializing in Data Science & AI.
-      I love building intelligent systems, modern websites and AI assistants
-      that solve real-world problems.
-    </p>
-  </section>
+  <ul class="menu">
+    <li><a onclick="go('home')">HOME</a></li>
+    <li><a onclick="go('about')">ABOUT</a></li>
+    <li><a onclick="go('services')">SERVICES</a></li>
+    <li><a onclick="go('skills')">SKILLS</a></li>
+    <li><a onclick="go('projects')">WORK</a></li>
+    <li><a onclick="go('faq')">FAQ</a></li>
+  </ul>
 
-  <section id="links">
+  <button class="hire-btn" onclick="go('chat')">HIRE ME</button>
+</nav>
+
+<!-- HAMBURGER -->
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+<div class="mobile-menu" id="mobileMenu">
+  <a onclick="go('home')">Home</a>
+  <a onclick="go('about')">About</a>
+  <a onclick="go('services')">Services</a>
+  <a onclick="go('skills')">Skills</a>
+  <a onclick="go('projects')">Work</a>
+  <a onclick="go('faq')">FAQ</a>
+</div>
+
+<!-- SECTIONS -->
+<section id="home" class="section hero">
+  <h1>Saurabh Kumar Jha</h1>
+  <p>AI Developer • Web Innovator • Tech Enthusiast</p>
+  <div class="links">
     <a href="https://www.linkedin.com/in/saurabh-kumar-jha-093912307" target="_blank">LinkedIn</a>
     <a href="https://github.com/saurabhkashyap-maker" target="_blank">GitHub</a>
-  </section>
-
-  <!-- AI CHAT BOX -->
-  <div id="chatbox">
-    <h3>Saurabh's Assistant 🤖</h3>
-    <div id="chatlog"></div>
-    <input type="text" id="userInput" placeholder="Say hello..." />
   </div>
+</section>
+
+<section id="about" class="section">
+  <h2>About Me</h2>
+  <p>
+    I am a passionate BCA student specializing in Data Science & AI.
+    I love building futuristic websites, AI assistants, and intelligent systems
+    that solve real-world problems with clean design and smart automation.
+  </p>
+</section>
+
+<section id="services" class="section cards">
+  <div class="card">AI Assistants</div>
+  <div class="card">Web Development</div>
+  <div class="card">Automation</div>
+</section>
+
+<section id="skills" class="section">
+  <p>HTML • CSS • JavaScript • AI • Data Science</p>
+</section>
+
+<section id="projects" class="section cards">
+  <div class="card" onclick="window.open('https://vfgfoundation.com')">
+    NGO Platform – VFG Foundation
+  </div>
+</section>
+
+<section id="faq" class="section">
+  <p>Ask anything using the assistant 🤖</p>
+</section>
+
+<!-- AI CHAT -->
+<div class="ai-box" id="chat">
+  <div class="ai-header">Saurabh’s Assistant 🤖</div>
+  <div class="ai-body" id="chatBody">
+    <p>Hello 👋 I am here to help you.</p>
+  </div>
+  <input id="userInput" placeholder="Type hello..." onkeydown="chatEnter(event)">
 </div>
 
-<audio id="robotSound" src="robot.mp3"></audio>
+<!-- SOUNDS -->
+<audio id="hoverSound" src="https://assets.mixkit.co/sfx/preview/mixkit-robotic-interface-257.wav"></audio>
+<audio id="clickSound" src="https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.wav"></audio>
 
 <script src="script.js"></script>
 </body>
