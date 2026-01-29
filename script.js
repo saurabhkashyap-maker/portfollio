@@ -1,18 +1,3 @@
-/* INIT SCREEN FIXED */
-const btn = document.getElementById("initBtn");
-const init = document.getElementById("initScreen");
-const main = document.getElementById("mainContent");
-const bootSound = document.getElementById("bootSound");
-
-btn.addEventListener("click", () => {
-    bootSound.currentTime = 0;
-    bootSound.play().catch(()=>{}); // safe autoplay
-    init.style.display = "none";
-    main.style.display = "block";
-    startTyping();
-    animateHomeServices();
-});
-
 /* TYPING EFFECT */
 const texts=["Elite Digital Solutions","AI Powered Systems","Modern Web Experiences","Future Ready Technology"];
 let i=0,j=0,del=false;
@@ -28,6 +13,7 @@ function startTyping(){
     }
   },90);
 }
+startTyping();
 
 /* HOME SERVICES SLIDE-IN */
 function animateHomeServices(){
@@ -37,6 +23,7 @@ function animateHomeServices(){
     card.style.animationDelay = `${0.2*(index+1)}s`;
   });
 }
+animateHomeServices();
 
 /* NAVIGATION BUTTONS */
 const navLinks=document.querySelectorAll("nav a");
@@ -46,7 +33,6 @@ navLinks.forEach(link=>{
     const section=link.dataset.section;
     document.querySelectorAll(".section").forEach(sec=>sec.style.display="none");
     document.getElementById(section).style.display="block";
-    document.getElementById("navHoverSound").play();
   });
 });
 
@@ -58,7 +44,6 @@ const chatInput=document.getElementById("chatInput");
 
 chatBtn.addEventListener("click",()=>{
   chatBox.style.display=chatBox.style.display==="flex"?"none":"flex";
-  document.getElementById("chatHoverSound").play();
 });
 
 chatInput.addEventListener("keypress",e=>{
@@ -73,12 +58,6 @@ chatInput.addEventListener("keypress",e=>{
       chatContent.scrollTop=chatContent.scrollHeight;
     },500);
   }
-});
-
-/* HOVER SOUND FOR SERVICE CARDS */
-const serviceCards=document.querySelectorAll(".service-card");
-serviceCards.forEach(card=>{
-  card.addEventListener("mouseenter",()=>document.getElementById("cardHoverSound").play());
 });
 
 /* PARTICLES BACKGROUND */
