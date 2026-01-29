@@ -3,12 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CODEXDR PVT LTD</title>
-
-<!-- CSS -->
+<title>Saurabh Portfolio</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <!-- INIT SCREEN -->
@@ -16,54 +13,97 @@
   <button id="initBtn">⚡ INITIALIZE SYSTEM</button>
 </div>
 
-<!-- ROBOTIC SOUND -->
 <audio id="bootSound">
   <source src="https://assets.mixkit.co/sfx/preview/mixkit-futuristic-interface-zoom-893.mp3" type="audio/mpeg">
 </audio>
 
+<!-- PARTICLE BACKGROUND -->
+<canvas id="bgCanvas"></canvas>
+
 <!-- MAIN CONTENT -->
 <div id="mainContent" style="display:none">
 
-  <nav>
-    <a href="#">HOME</a>
-    <a href="#">ABOUT</a>
-    <a href="#">SERVICES</a>
-    <a href="#">SKILLS</a>
-    <a href="#">WORK</a>
-    <a href="#">FAQ</a>
-  </nav>
+<nav>
+  <a href="#" data-section="home">HOME</a>
+  <a href="#" data-section="about">ABOUT</a>
+  <a href="#" data-section="services">SERVICES</a>
+  <a href="#" data-section="skills">SKILLS</a>
+  <a href="#" data-section="work">WORK</a>
+  <a href="#" data-section="faq">FAQ</a>
+</nav>
 
-  <section class="section">
-    <h1>I AM <span>CODEXDR</span></h1>
-    <div id="typing"></div>
-  </section>
+<!-- HOME -->
+<section id="home" class="section">
+  <h1>I AM <span>Saurabh Kumar Jha</span></h1>
+  <div id="typing"></div>
+</section>
 
-  <section class="section services">
-    <h2 class="service-title">ELITE <span>SERVICES</span></h2>
+<!-- ABOUT -->
+<section id="about" class="section" style="display:none;">
+  <h2>About Me</h2>
+  <p>
+    I am a passionate BCA student specializing in Data Science & AI.
+    I build intelligent systems, modern websites, and AI assistants.
+  </p>
+</section>
 
-    <div class="service-card">
-      <div class="icon purple">&lt;/&gt;</div>
-      <h3>Full Stack Dev</h3>
-      <p>
-        End-to-end web solutions using PHP, Laravel & Node.js.
-        Secure, fast and scalable systems.
-      </p>
-    </div>
+<!-- SERVICES -->
+<section id="services" class="section services" style="display:none;">
+  <h2 class="service-title">ELITE <span>SERVICES</span></h2>
 
-    <div class="service-card">
-      <div class="icon cyan">🎮</div>
-      <h3>Game Development</h3>
-      <p>
-        Color Prediction, Casino, Ludo and Betting games
-        with admin panels.
-      </p>
-    </div>
+  <div class="service-card">
+    <div class="icon purple">&lt;/&gt;</div>
+    <h3>Full Stack Dev</h3>
+    <p>Web solutions using PHP, Laravel, Node.js. Secure & scalable.</p>
+  </div>
 
-  </section>
+  <div class="service-card">
+    <div class="icon cyan">🎮</div>
+    <h3>Game Development</h3>
+    <p>Color Prediction, Casino, Ludo & Betting games with admin panels.</p>
+  </div>
 
+  <div class="service-card">
+    <div class="icon pink">🤖</div>
+    <h3>AI & Robotics</h3>
+    <p>Chatbots, voice assistants, automation systems with AI models.</p>
+  </div>
+
+  <div class="service-card">
+    <div class="icon orange">💻</div>
+    <h3>App Development</h3>
+    <p>Android & iOS apps with modern UI & smooth UX.</p>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section" style="display:none;">
+  <h2>My Skills</h2>
+  <ul>
+    <li>Python, JavaScript, PHP</li>
+    <li>React, Node.js, Laravel</li>
+    <li>Data Science & AI</li>
+    <li>Web & App Development</li>
+    <li>Game Development</li>
+  </ul>
+</section>
+
+<!-- WORK -->
+<section id="work" class="section" style="display:none;">
+  <h2>My Work</h2>
+  <p>Here you can add your latest projects, portfolio images or videos.</p>
+</section>
+
+<!-- CHATBOX BUTTON -->
+<div id="chatBtn">💬 Chat</div>
+
+<!-- CHATBOX -->
+<div id="chatBox">
+  <div id="chatHeader">Saurabh's Assistant</div>
+  <div id="chatContent"></div>
+  <input type="text" id="chatInput" placeholder="Type your message...">
 </div>
 
-<!-- JS -->
 <script src="script.js"></script>
 </body>
 </html>
