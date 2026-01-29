@@ -1,97 +1,86 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica;}
+body{background:black;color:white;overflow-x:hidden}
+
+.section{min-height:100vh;padding:100px 20px;text-align:center}
+.hero h1{font-size:38px;color:#a855f7}
+.hero p{margin-top:10px}
+
+.links a{
+  margin:10px;
+  color:#a855f7;
+  border:1px solid #a855f7;
+  padding:8px 14px;
+  border-radius:20px;
+  text-decoration:none;
 }
 
-body {
-  background: black;
-  color: #a970ff;
+.top-nav{
+  position:fixed;top:0;width:100%;
+  padding:15px 30px;
+  display:flex;justify-content:space-between;
+  background:rgba(0,0,0,.8);
+  border-bottom:1px solid #7c3aed;
+  z-index:100
 }
 
-/* INTRO SCREEN */
-#intro {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.menu{list-style:none;display:flex;gap:20px}
+.menu a{cursor:pointer}
+.menu a:hover{color:#a855f7}
+
+.hire-btn{
+  background:transparent;
+  border:1px solid #a855f7;
+  color:#a855f7;
+  padding:6px 16px;
+  border-radius:20px;
+  box-shadow:0 0 10px #a855f7;
 }
 
-#startBtn {
-  border: 2px solid #a970ff;
-  background: transparent;
-  color: #a970ff;
-  padding: 18px 40px;
-  font-size: 22px;
-  cursor: pointer;
-  letter-spacing: 2px;
-  box-shadow: 0 0 20px #a970ff;
-  transition: 0.3s;
+.hamburger{display:none;position:fixed;top:15px;right:20px;font-size:26px;z-index:200}
+
+.mobile-menu{
+  position:fixed;top:60px;right:20px;
+  background:black;border:1px solid #a855f7;
+  display:none;flex-direction:column;padding:15px
 }
 
-#startBtn:hover {
-  background: #a970ff;
-  color: black;
-  box-shadow: 0 0 40px #a970ff;
+.cards{display:flex;flex-wrap:wrap;gap:20px;justify-content:center}
+.card{
+  border:1px solid #7c3aed;
+  padding:30px;
+  width:260px;
+  box-shadow:0 0 15px #7c3aed;
+  cursor:pointer;
 }
 
-.subtext {
-  margin-top: 15px;
-  font-size: 12px;
-  opacity: 0.6;
+.ai-box{
+  position:fixed;bottom:20px;right:20px;
+  width:260px;
+  background:#000;border:1px solid #7c3aed;
+  box-shadow:0 0 15px #7c3aed;
+}
+.ai-header{background:#7c3aed;padding:8px;text-align:center}
+.ai-body{height:120px;overflow:auto;padding:8px;font-size:13px}
+.ai-box input{width:100%;padding:8px;border:none}
+
+#intro{
+  position:fixed;inset:0;
+  background:black;display:flex;
+  justify-content:center;align-items:center;
+  z-index:999
+}
+#startBtn{
+  border:2px solid #a855f7;
+  background:transparent;
+  color:#a855f7;
+  padding:20px 40px;
+  font-size:20px;
+  box-shadow:0 0 20px #a855f7;
 }
 
-/* MAIN SITE */
-#mainSite {
-  display: none;
-  padding: 20px;
-}
+#particles{position:fixed;inset:0;z-index:-1}
 
-nav {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-section {
-  margin-bottom: 40px;
-  text-align: center;
-}
-
-#links a {
-  display: inline-block;
-  margin: 10px;
-  color: #a970ff;
-  border: 1px solid #a970ff;
-  padding: 10px 20px;
-  text-decoration: none;
-}
-
-#links a:hover {
-  background: #a970ff;
-  color: black;
-}
-
-/* CHAT BOX */
-#chatbox {
-  max-width: 400px;
-  margin: auto;
-  border: 1px solid #a970ff;
-  padding: 15px;
-}
-
-#chatlog {
-  height: 150px;
-  overflow-y: auto;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-#userInput {
-  width: 100%;
-  padding: 8px;
-  background: black;
-  border: 1px solid #a970ff;
-  color: #a970ff;
+@media(max-width:768px){
+  .menu{display:none}
+  .hamburger{display:block}
 }
