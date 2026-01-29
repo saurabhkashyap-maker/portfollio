@@ -13,8 +13,20 @@
   <button id="initBtn">⚡ INITIALIZE SYSTEM</button>
 </div>
 
+<!-- BOOT SOUND -->
 <audio id="bootSound">
   <source src="https://assets.mixkit.co/sfx/preview/mixkit-futuristic-interface-zoom-893.mp3" type="audio/mpeg">
+</audio>
+
+<!-- HOVER SOUNDS -->
+<audio id="cardHoverSound">
+  <source src="https://assets.mixkit.co/sfx/preview/mixkit-tech-click-1110.mp3" type="audio/mpeg">
+</audio>
+<audio id="navHoverSound">
+  <source src="https://assets.mixkit.co/sfx/preview/mixkit-mouse-click-1125.mp3" type="audio/mpeg">
+</audio>
+<audio id="chatHoverSound">
+  <source src="https://assets.mixkit.co/sfx/preview/mixkit-button-click-1111.mp3" type="audio/mpeg">
 </audio>
 
 <!-- PARTICLE BACKGROUND -->
@@ -29,7 +41,6 @@
   <a href="#" data-section="services">SERVICES</a>
   <a href="#" data-section="skills">SKILLS</a>
   <a href="#" data-section="work">WORK</a>
-  <a href="#" data-section="faq">FAQ</a>
 </nav>
 
 <!-- HOME -->
@@ -50,29 +61,15 @@
 <!-- SERVICES -->
 <section id="services" class="section services" style="display:none;">
   <h2 class="service-title">ELITE <span>SERVICES</span></h2>
-
-  <div class="service-card">
-    <div class="icon purple">&lt;/&gt;</div>
-    <h3>Full Stack Dev</h3>
-    <p>Web solutions using PHP, Laravel, Node.js. Secure & scalable.</p>
-  </div>
-
-  <div class="service-card">
-    <div class="icon cyan">🎮</div>
-    <h3>Game Development</h3>
-    <p>Color Prediction, Casino, Ludo & Betting games with admin panels.</p>
-  </div>
-
-  <div class="service-card">
-    <div class="icon pink">🤖</div>
-    <h3>AI & Robotics</h3>
-    <p>Chatbots, voice assistants, automation systems with AI models.</p>
-  </div>
-
-  <div class="service-card">
-    <div class="icon orange">💻</div>
-    <h3>App Development</h3>
-    <p>Android & iOS apps with modern UI & smooth UX.</p>
+  <div class="services-container">
+    <div class="service-card" title="Web, PHP, Node.js, Laravel"><div class="icon purple">&lt;/&gt;</div><h3>Full Stack Dev</h3></div>
+    <div class="service-card" title="Games with admin panels"><div class="icon cyan">🎮</div><h3>Game Development</h3></div>
+    <div class="service-card" title="Chatbots, AI assistants"><div class="icon pink">🤖</div><h3>AI & Robotics</h3></div>
+    <div class="service-card" title="Android & iOS Apps"><div class="icon orange">💻</div><h3>App Development</h3></div>
+    <div class="service-card" title="Cloud hosting, AWS, Firebase"><div class="icon purple">☁️</div><h3>Cloud Solutions</h3></div>
+    <div class="service-card" title="Security audits & penetration testing"><div class="icon cyan">🛡️</div><h3>Cybersecurity</h3></div>
+    <div class="service-card" title="UI/UX Design & Prototyping"><div class="icon pink">🎨</div><h3>UI/UX Design</h3></div>
+    <div class="service-card" title="SEO & Digital Marketing"><div class="icon orange">📈</div><h3>Digital Marketing</h3></div>
   </div>
 </section>
 
